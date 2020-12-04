@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { withRouter } from "react-router-dom";
+import { AuthContext } from "../../context/auth";
 import FormInput from "../formInput/FormInput";
 import styles from "./login.module.scss";
 import gql from "graphql-tag";
@@ -22,6 +23,7 @@ const Login = ({ setShowRegister, history }) => {
     password: "",
   });
   const [errors, setErrors] = useState({});
+  const context = useContext(AuthContext);
   const { email, password } = userInput;
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -30,6 +32,7 @@ const Login = ({ setShowRegister, history }) => {
 
   const [loginUser, { loading }] = useMutation(LOGIN_USER, {
     update(proxy, result) {
+      context.login(result.data.login);
       history.push("/posts");
     },
     onError(err) {

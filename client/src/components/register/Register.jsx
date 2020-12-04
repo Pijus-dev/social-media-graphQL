@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { withRouter } from "react-router-dom";
+import { AuthContext } from "../../context/auth";
 import FormInput from "../formInput/FormInput";
 import styles from "./register.module.scss";
 import gql from "graphql-tag";
@@ -29,6 +30,7 @@ const REGISTER_USER = gql`
 `;
 
 const Register = ({ history }) => {
+  const context = useContext(AuthContext);
   const [userInput, setUserInput] = useState({
     username: "",
     email: "",
@@ -44,6 +46,7 @@ const Register = ({ history }) => {
 
   const [addUser, { loading }] = useMutation(REGISTER_USER, {
     update(proxy, result) {
+      context.login(result.data.register);
       history.push("/posts");
     },
     onError(err) {

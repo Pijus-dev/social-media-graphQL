@@ -5,11 +5,12 @@ const typeDefs = gql`
     id: ID!
     username: String!
     body: String!
+    image: String!
     createdAt: String!
     comments: [Comment]!
     likes: [Like]!
     likeCount: Int!
-    commentCount: Int! 
+    commentCount: Int!
   }
   type Comment {
     id: ID!
@@ -42,7 +43,7 @@ const typeDefs = gql`
   type Mutation {
     register(registerInput: RegisterInput): User!
     login(email: String!, password: String!): User!
-    createPost(body: String!): Post!
+    createPost(body: String!, image: String!): Post!
     deletePost(postId: ID!): String!
     createComment(postId: String!, body: String!): Post!
     deleteComment(postId: ID!, commentId: ID!): Post!

@@ -1,0 +1,50 @@
+.postContainer {
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 5px;
+  height: 750px;
+  display: flex;
+  flex-direction: column;
+  padding: 0 !important;
+  margin-top: 30px;
+  &:first-child {
+    margin-top: 0;
+  }
+  .postUsername {
+    height: 40px;
+    align-items: center;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      margin: 0;
+      font-weight: 600;
+      text-transform: capitalize;
+      color: #262626;
+      letter-spacing: 1.4px;
+    }
+  }
+  .postImage {
+    width: 100%;
+    height: 650px;
+    background-size: cover;
+    background-position: center;
+  }
+  .likes {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+
+    svg {
+      cursor: pointer;
+
+      &:nth-child(2) {
+        margin-left: 15px;
+      }
+    }
+  }
+  .likedPeople {
+    padding-left: 20px;
+  }
+}

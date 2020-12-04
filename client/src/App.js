@@ -1,6 +1,5 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-
 import HomePage from "../src/pages/HomePage/HomePage";
 import PostsPage from "../src/pages/PostsPage/PostsPage";
 

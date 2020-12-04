@@ -27,7 +27,7 @@ const postsResolvers = {
     },
   },
   Mutation: {
-    async createPost(parent, { body }, context) {
+    async createPost(parent, { body, image }, context) {
       const decodedToken = protect(context);
       const user = await User.findById(decodedToken.id).select("-password");
       if (body.trim() === "") {
@@ -36,6 +36,7 @@ const postsResolvers = {
       if (user) {
         const newPost = await Post.create({
           body,
+          image,
           user: user.id,
           username: user.username,
           createdAt: new Date().toISOString(),

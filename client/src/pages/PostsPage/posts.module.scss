@@ -1,24 +1,55 @@
-.wrapper {
-  height: 100vh;
+.container {
+  min-height: 100vh;
   width: 100vw;
   background-color: #fafafa;
-  display: flex;
-  justify-content: center;
 
   .postContainer {
-    border: 1px solid rgb(219, 219, 219);
-    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
 
-    .postUsername {
-      height: 60px;
-      padding-left: 40px;
+    .addPost {
+      height: 50px;
+      border-radius: 8px;
+      position: relative !important;
+      background-color: white;
+      border: 1px solid rgb(219, 219, 219);
+      margin-bottom: 20px;
+      padding-right: 0;
       display: flex;
+      justify-content: space-between;
       align-items: center;
 
-      p {
-        margin: 0;
-        color: #262626;
+      i {
+        color: rgb(180, 175, 175);
+        cursor: pointer;
+      }
+
+      .fileInput {
+        padding-top: 5px;
+        input {
+          display: none;
+        }
+      }
+
+      .formInput {
+        width: 90%;
+
+        input {
+          border: none;
+          width: 100%;
+          letter-spacing: 1.4px;
+          font-size: 14px;
+
+          &:focus {
+            outline: none;
+          }
+        }
       }
     }
+  }
+  .wrapper {
+    display: flex;
+    justify-content: center;
   }
 }

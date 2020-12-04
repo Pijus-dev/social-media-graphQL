@@ -4,6 +4,7 @@ const postSchema = mongoose.Schema({
   body: String,
   username: String,
   createdAt: String,
+  image: String,
   comments: [
     {
       body: String,
@@ -25,4 +26,3 @@ const postSchema = mongoose.Schema({
 
 const Post = mongoose.model("Post", postSchema);
 export default Post;
-

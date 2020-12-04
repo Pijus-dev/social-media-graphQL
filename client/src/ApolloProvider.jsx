@@ -1,5 +1,6 @@
 import React from "react";
 import App from "./App";
+import { AuthProvider } from "./context/auth";
 import { BrowserRouter } from "react-router-dom";
 import ApolloClient from "apollo-client";
 import { InMemoryCache } from "apollo-cache-inmemory";
@@ -16,8 +17,10 @@ const client = new ApolloClient({
 });
 export default (
   <ApolloProvider client={client}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <AuthProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </AuthProvider>
   </ApolloProvider>
 );
