@@ -9,8 +9,8 @@ import {
 const usersResolvers = {
   Mutation: {
     //   login user
-    async login(parent, { email, password, username }) {
-      const { errors, valid } = validateLoginInput(username, email, password);
+    async login(parent, { email, password }) {
+      const { errors, valid } = validateLoginInput(email, password);
       if (!valid) {
         throw new UserInputError("Errors", { errors });
       }

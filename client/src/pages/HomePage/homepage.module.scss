@@ -1,0 +1,31 @@
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .mainBlock {
+    height: 618px;
+    width: 935px;
+    display: flex;
+
+    .phone {
+      height: 100%;
+      background-image: url("../../img/phone.png");
+      align-self: center;
+      position: relative;
+      flex-basis: 454px;
+
+      img {
+        height: 436px;
+        right: 60px;
+        position: absolute;
+        visibility: visible;
+        top: 95px;
+        width: 247px;
+      }
+    }
+  }
+}

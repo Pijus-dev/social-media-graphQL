@@ -28,11 +28,9 @@ export const validateRegisterInput = (
   };
 };
 
-export const validateLoginInput = (username, email, password) => {
+export const validateLoginInput = (email, password) => {
   const errors = {};
-  if (username.trim() === "") {
-    errors.username = "username field is empty";
-  }
+
   if (email.trim() === "") {
     errors.email = "email field is empty";
   }

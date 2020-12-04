@@ -1,0 +1,16 @@
+.inputGroup {
+    margin-top: 8px;
+    border: 1px solid rgb(219, 219, 219);
+    input {
+      width: 100%;
+      background: rgb(250, 250, 250);
+      border: 0;
+      padding: 12px 0 10px 10px;
+      color: #d6cdcd;
+      font-size: 12px;
+      letter-spacing: 1.4px;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
